@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Callback</title>
+  </head>
+  <body>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+
+      // Aquí puedes enviar el código de vuelta a tu proceso de Electron o manejarlo directamente
+      if (code) {
+        // Enviar el código a tu proceso de Electron o a otro archivo de JavaScript
+        window.electron.send('spotify-auth-code', code);
+      }
+    </script>
+  </body>
+</html>
